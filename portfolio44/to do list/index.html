@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aplikasi To-Do List minimalis untuk mengatur tugas harian.">
+  <title>Taskly — Daily Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <a href="#" class="logo">taskly<span>.</span></a>
+      <span class="status"><span class="status-dot"></span> Stay productive</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Make today<br> <span>count.</span></h1>
+      <p class="subtitle">Satu langkah kecil, satu tugas selesai.</p>
+    </section>
+
+    <section class="task-card">
+      <div class="card-heading">
+        <div>
+          <h2>Daftar Tugas</h2>
+          <p id="taskSummary">Mulai rencanakan harimu.</p>
+        </div>
+        <span class="task-count" id="taskCount">0</span>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Mau mengerjakan apa?"
+          maxlength="100"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="add-btn">Tambah <span>+</span></button>
+      </form>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">Semua</button>
+        <button class="filter" data-filter="active">Belum selesai</button>
+        <button class="filter" data-filter="completed">Selesai</button>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✳</div>
+        <h3>Belum ada tugas</h3>
+        <p>Tambahkan tugas pertamamu dan mulai produktif.</p>
+      </div>
+
+      <footer class="card-footer">
+        <span id="remainingText">0 tugas tersisa</span>
+        <button id="clearCompleted" class="clear-btn" type="button">
+          Hapus yang selesai
+        </button>
+      </footer>
+    </section>
+
+    <footer class="app-footer">
+      <span>BUILT WITH HTML · CSS · JS</span>
+      <span>© <span id="year"></span> TASKLY</span>
+    </footer>
+  </main>
+</body>
+</html>

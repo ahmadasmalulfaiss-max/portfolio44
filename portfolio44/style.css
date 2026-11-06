@@ -1,0 +1,1255 @@
+/* =========================================================
+   PORTFOLIO — Ahmad Asmalul Faiz
+   File CSS Lengkap (Clean Version)
+   ========================================================= */
+
+:root {
+  --bg: #ffffff;
+  --bg-card: #f5f5f5;
+  --line: rgba(0, 0, 0, 0.1);
+  --primary: #000000;
+  --accent: #666666;
+  --text: #000000;
+  --mute: #777777;
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Background Grid Pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(600px circle at 30% 20%, rgba(0, 0, 0, 0.03), transparent 60%),
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 40px 40px;
+}
+
+/* =========================================================
+   1. NAVBAR
+   ========================================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-menu a {
+  color: var(--mute);
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: var(--primary);
+}
+
+/* =========================================================
+   2. HERO / HOME
+   ========================================================= */
+.hero {
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 24px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 580px;
+}
+
+.small-title {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.hero-text h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #000 40%, var(--mute));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text h2 {
+  font-size: 22px;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: var(--mute);
+  font-size: 16px;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.btn-outline {
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--bg-card);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hero-image {
+  position: relative;
+}
+
+.profile-icon {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primary);
+  margin: 0 auto;
+  transform: translateX(-70px);
+  transition: 0.5s;
+}
+
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-icon:hover {
+  transform: translateX(-70px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   3. SECTION UMUM
+   ========================================================= */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title p {
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  margin-top: 6px;
+  color: var(--primary);
+}
+
+/* =========================================================
+   4. ABOUT
+   ========================================================= */
+.about-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+}
+
+.about-card {
+  background: var(--bg-card);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+.about-card h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.about-card p {
+  color: var(--mute);
+  margin-bottom: 16px;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-info div {
+  background: var(--bg-card);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.about-info span {
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.about-info strong {
+  margin-top: 4px;
+  font-size: 16px;
+  color: var(--primary);
+}
+
+/* =========================================================
+   5. SKILLS
+   ========================================================= */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--bg-card);
+  padding: 28px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skill-icon {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--primary);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.skill-card h3 {
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.skill-card p {
+  color: var(--mute);
+  font-size: 14px;
+}
+
+/* =========================================================
+   6. PROJECTS
+   ========================================================= */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  display: flex;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.project-type {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.project-content h3 {
+  font-size: 20px;
+  margin: 6px 0 10px;
+  color: var(--primary);
+}
+
+.project-content p {
+  color: var(--mute);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tags span {
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.project-link {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+/* =========================================================
+   7. SERTIFIKAT (Hitam-Putih)
+   ========================================================= */
+#certificates {
+  position: relative;
+}
+
+#certificates .section-title {
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+#certificates .section-title > p {
+  color: var(--mute);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+#certificates .section-title h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.certificate-description {
+  display: block;
+  max-width: 1000px;
+  color: var(--mute);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Filter Kategori */
+.certificate-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  padding: 10px 17px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: #080808;
+  color: var(--mute);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  transition: .25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #efe6e6;
+}
+
+/* Grid Sertifikat */
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.certificate-item {
+  min-width: 0;
+  padding: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0a0a0a;
+  transition: transform .3s, border-color .3s;
+}
+
+.certificate-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.certificate-item.hidden {
+  display: none;
+}
+
+.certificate-item > img {
+  display: block;
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.certificate-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 3px 2px;
+}
+
+.certificate-card-info h3 {
+  margin: 0 0 5px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.certificate-card-info p {
+  margin: 0;
+  color: var(--mute);
+  font-size: 11px;
+}
+
+.view-certificate {
+  flex-shrink: 0;
+  padding: 5px 0 5px 5px;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.view-certificate:hover {
+  color: var(--mute);
+}
+
+
+/* =========================================================
+   8. MODAL SERTIFIKAT — REVISI
+   ========================================================= */
+
+.certificate-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    overflow-y: auto;
+}
+
+.certificate-modal.show {
+    display: flex;
+    animation: modalFadeIn .25s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.certificate-modal-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 950px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: #fff;
+    color: var(--primary);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .2);
+}
+
+/* Tombol tutup */
+.close-certificate {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    z-index: 5;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: transparent;
+    color: var(--mute);
+    font-size: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.close-certificate:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+/* Area foto sertifikat */
+#modalCertificateImage {
+    display: block;
+    align-self: center;
+    width: 100%;
+    max-height: 55vh;
+    min-width: 0;
+    object-fit: contain;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #f5f5f5;
+}
+
+/* Judul dan detail */
+#modalCertificateTitle {
+    margin: 15px 35px 12px 0;
+    color: var(--primary);
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+#modalCertificateCategory {
+    display: inline-block;
+    width: fit-content;
+    margin: 0 0 15px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.certificate-detail {
+    align-self: center;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.certificate-detail p {
+    margin: 12px 0;
+    color: var(--primary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.certificate-detail strong {
+    color: var(--mute);
+}
+
+/* Navigasi dan download */
+.certificate-modal-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+}
+
+.certificate-modal-actions button {
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--primary);
+    font-size: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.certificate-modal-actions button:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+#certificateCounter {
+    color: var(--mute);
+    font-size: 12px;
+}
+
+#downloadCertificate {
+    display: inline-block;
+    padding: 11px 16px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: .2s;
+}
+
+#downloadCertificate:hover {
+    background: #fff;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 700px) {
+    .certificate-modal {
+        padding: 12px;
+        align-items: flex-start;
+    }
+
+    .certificate-modal-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        max-height: 95vh;
+        padding: 20px;
+    }
+
+    #modalCertificateImage {
+        max-height: 40vh;
+    }
+
+    #modalCertificateTitle {
+        font-size: 19px;
+    }
+
+    .certificate-detail {
+        align-self: start;
+    }
+
+    .certificate-modal-actions {
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   9. CONTACT SECTION (Orange Accent)
+   ========================================================= */
+.contact-section {
+  position: relative;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* LEFT: Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.info-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);   /* ← HITAM, bukan orange */
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+
+.info-item:hover .info-icon {
+    background: var(--primary);   /* ← HITAM */
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.info-label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--mute);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.info-value {
+  display: block;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+a.info-value:hover {
+  color: #ff6900;
+}
+
+/* Social Media Icons */
+.social-block {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  margin-top: 6px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.social-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mute);
+  background: var(--bg-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand-color, #ff6900);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+
+.social-btn svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-color, #ff6900);
+  color: #fff;
+  box-shadow: 0 10px 25px -5px var(--brand-shadow, rgba(255,105,0,0.5));
+}
+
+.social-btn:hover::before {
+  opacity: 1;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* Brand Colors */
+.social-btn.github {
+  --brand-color: #24292e;
+  --brand-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.social-btn.whatsapp {
+  --brand-color: #25D366;
+  --brand-shadow: rgba(37, 211, 102, 0.5);
+}
+
+.social-btn.linkedin {
+  --brand-color: #0A66C2;
+  --brand-shadow: rgba(10, 102, 194, 0.5);
+}
+
+.social-btn.instagram {
+  --brand-color: #E4405F;
+  --brand-shadow: rgba(228, 64, 95, 0.5);
+}
+
+.social-btn.instagram:hover::before {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Availability Badge */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--mute);
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  width: fit-content;
+  margin-top: 6px;
+}
+
+.availability .dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* RIGHT: Form */
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.25s;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6900;
+  box-shadow: 0 0 0 3px rgba(255, 105, 0, 0.15);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-top: 4px;
+}
+
+.btn-submit:hover {
+  background: #ff6900;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 105, 0, 0.3);
+}
+
+.btn-submit:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-submit svg {
+  transition: transform 0.25s;
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-message {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.form-message.show {
+  padding: 12px;
+  max-height: 100px;
+}
+
+.form-message.success {
+  color: #155724;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+  color: #721c24;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+.footer {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.footer-copyright {
+  font-size: 0.95rem;
+  color: var(--mute);
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.footer-socials a {
+  color: var(--primary);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+}
+
+.footer-socials a:hover {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   11. RESPONSIVE
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .profile-icon {
+    transform: translateX(0);
+    margin-top: 20px;
+  }
+
+  .profile-icon:hover {
+    transform: scale(1.05);
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .certificate-modal-content {
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .modal-details h3 {
+    font-size: 17px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .nav-menu {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-item > img {
+    height: 200px;
+  }
+
+  .certificate-modal {
+    padding: 12px;
+  }
+
+  .certificate-modal-content {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-height: 92vh;
+    padding: 35px 16px 18px;
+  }
+
+  .modal-preview > img {
+    max-height: 270px;
+  }
+
+  .modal-details {
+    padding-top: 5px;
+  }
+
+  .modal-detail-row {
+    margin-top: 15px;
+  }
+
+  .contact-form {
+    padding: 24px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .social-btn {
+    width: 42px;
+    height: 42px;
+  }
+/* =========================================================
+   12. ANIMASI NAMA PANTUL
+   ========================================================= */
+.nama-pantul .kata {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.nama-pantul .huruf {
+  display: inline-block;
+  -webkit-text-fill-color: var(--primary);
+  animation: pantul 1.6s cubic-bezier(.3, 1.6, .5, 1) both;
+}
+
+@keyframes pantul {
+  0%   { transform: translateY(-140%) scale(.6); opacity: 0; }
+  60%  { opacity: 1; }
+  100% { transform: none; }
+}
+}

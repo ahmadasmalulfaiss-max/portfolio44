@@ -1,0 +1,399 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #101010;
+  --surface: #191919;
+  --surface-hover: #222222;
+  --text: #f5f5f5;
+  --muted: #929292;
+  --accent: #ff8a3d;
+  --border: #303030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #292019 0%, transparent 45%),
+    var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  padding: 0 22px;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -1.5px;
+}
+
+.logo span,
+.intro h1 span {
+  color: var(--accent);
+}
+
+.status {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #77d99a;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #77d99a66;
+}
+
+.intro {
+  padding: 58px 0 35px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 18px;
+}
+
+.intro h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(45px, 9vw, 70px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.task-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 60px #00000022;
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.card-heading h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 21px;
+}
+
+.card-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.task-count {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #ff8a3d18;
+  color: var(--accent);
+  border: 1px solid #ff8a3d30;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 0;
+  background: #111111;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  padding: 14px;
+  font-size: 13px;
+  transition: border-color 0.2s;
+}
+
+.task-form input:focus {
+  border-color: var(--accent);
+}
+
+.task-form input::placeholder {
+  color: #777;
+}
+
+.add-btn {
+  border: none;
+  background: var(--accent);
+  color: #17110c;
+  padding: 0 17px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 12px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.add-btn:hover {
+  background: #ffa365;
+  transform: translateY(-1px);
+}
+
+.add-btn span {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin: 25px 0 17px;
+  overflow-x: auto;
+}
+
+.filter {
+  padding: 9px 13px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+.filter:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.filter.active {
+  background: #ff8a3d16;
+  color: var(--accent);
+  border-color: #ff8a3d35;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #141414;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  animation: appear 0.25s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-check {
+  appearance: none;
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.task-check:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.task-check:checked::after {
+  content: "✓";
+  color: #17110c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.task-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+.task-item.completed .task-text {
+  color: #777;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: #777;
+  padding: 5px 7px;
+  font-size: 17px;
+  border-radius: 6px;
+}
+
+.delete-btn:hover {
+  background: #ff55551a;
+  color: #ff7777;
+}
+
+.empty-state {
+  padding: 35px 10px;
+  text-align: center;
+}
+
+.empty-icon {
+  color: var(--accent);
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.empty-state h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.card-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 22px;
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.clear-btn {
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.clear-btn:hover {
+  color: #ffb080;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 25px 0;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 0 15px;
+  }
+
+  .header {
+    height: 72px;
+  }
+
+  .intro {
+    padding-top: 45px;
+  }
+
+  .task-card {
+    padding: 19px 15px;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form input {
+    width: 100%;
+    min-height: 47px;
+  }
+
+  .add-btn {
+    min-height: 45px;
+  }
+
+  .card-footer {
+    align-items: flex-start;
+  }
+
+  .app-footer {
+    font-size: 8px;
+  }
+}
